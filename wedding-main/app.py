@@ -24,8 +24,6 @@ app.config.from_object(config)
 # -------------------
 # Database
 # -------------------
-print("AAAAAAAAAAAAAAAAAAAA")
-print(os.environ.get("RAILWAY_ENV"))
 
 if os.environ.get("RAILWAY_ENV"):  # Railway sets this automatically
     os.makedirs("/data", exist_ok=True)
