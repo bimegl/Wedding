@@ -1,0 +1,446 @@
+<!--section id="rsvp" class="page">
+  <div class="section-title">CONFERMA PARTECIPAZIONE</div>
+  <div class="announcement">SI PREGA DI DARE CONFERMARE LA PARTECIPAZIONE <br> ENTRO IL 30 MAGGIO 2026</div>
+
+  <form method="POST" action="/rsvp" class="simple-form">
+    <input name="name" placeholder="Nome" required>
+    <input name="surname" placeholder="Cognome" required>
+    <input name="email" type="email" placeholder="Email" required>
+    <select name="attending" required>
+      <option value="">Parteciperai?</option>
+      <option value="yes">Sì</option>
+      <option value="no">No</option>
+    </select>
+    <input name="guests" type="number" placeholder="Numero persone" min="0">
+    <input name="bambini" type="number" placeholder="Di cui bambini sotto i 3 anni" min="0">
+    <textarea name="accompagnatori" placeholder="Eventuali accompagnatori..." style="min-height:100px;"></textarea>
+    <textarea name="notes" placeholder="Note o esigenze alimentari" style="min-height:40px;"></textarea>
+    <button type="submit" class="btn">Conferma</button>
+  </form>
+</section-->
+
+
+<!--section id="rsvp" class="page">
+  <div class="section-title">CONFERMA PARTECIPAZIONE</div>
+  <div class="announcement">SI PREGA DI DARE CONFERMARE LA PARTECIPAZIONE <br> ENTRO IL 30 MAGGIO 2026</div>
+
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+
+  <form id="rsvpForm" method="POST" action="/rsvp" class="carousel-form">
+
+    <div class="form-step active">
+      <input name="name" placeholder="Nome" required>
+      <div class="nav-buttons">
+        <button type="button" class="next-btn btn">Avanti</button>
+      </div>
+    </div>
+
+    <div class="form-step">
+      <input name="surname" placeholder="Cognome" required>
+      <div class="nav-buttons">
+        <button type="button" class="back-btn btn">Indietro</button>
+        <button type="button" class="next-btn btn">Avanti</button>
+      </div>
+    </div>
+
+    <div class="form-step">
+      <input name="email" type="email" placeholder="Email" required>
+      <div class="nav-buttons">
+        <button type="button" class="back-btn btn">Indietro</button>
+        <button type="button" class="next-btn btn">Avanti</button>
+      </div>
+    </div>
+
+    <div class="form-step" data-input="attending">
+      <div class="question">Parteciperai?</div>
+      <div class="options">
+        <button type="button" class="option-btn" data-value="yes">Sì</button>
+        <button type="button" class="option-btn" data-value="no">No</button>
+      </div>
+      <div class="nav-buttons">
+        <button type="button" class="back-btn btn">Indietro</button>
+      </div>
+    </div>
+
+    <div class="form-step" data-input="guests">
+      <div class="question">Quante persone ti accompagneranno?</div>
+      <div class="options">
+        <button type="button" class="option-btn" data-value="0">0</button>
+        <button type="button" class="option-btn" data-value="1">1</button>
+        <button type="button" class="option-btn" data-value="2">2</button>
+        <button type="button" class="option-btn" data-value="3">3</button>
+        <button type="button" class="option-btn" data-value="4">4</button>
+      </div>
+      <div class="nav-buttons">
+        <button type="button" class="back-btn btn">Indietro</button>
+      </div>
+    </div>
+
+    <div class="form-step" data-input="bambini">
+      <div class="question">Di cui bambini sotto i 3 anni?</div>
+      <div class="options">
+        <button type="button" class="option-btn" data-value="0">0</button>
+        <button type="button" class="option-btn" data-value="1">1</button>
+        <button type="button" class="option-btn" data-value="2">2</button>
+        <button type="button" class="option-btn" data-value="3">3</button>
+        <button type="button" class="option-btn" data-value="4">4</button>
+      </div>
+      <div class="nav-buttons">
+        <button type="button" class="back-btn btn">Indietro</button>
+      </div>
+    </div>
+
+    <div class="form-step">
+      <textarea name="accompagnatori" placeholder="Eventuali accompagnatori..." style="min-height:100px;"></textarea>
+      <div class="nav-buttons">
+        <button type="button" class="back-btn btn">Indietro</button>
+        <button type="button" class="next-btn btn">Avanti</button>
+      </div>
+    </div>
+
+    <div class="form-step">
+      <textarea name="notes" placeholder="Note o esigenze alimentari" style="min-height:40px;"></textarea>
+      <div class="nav-buttons">
+        <button type="button" class="back-btn btn">Indietro</button>
+        <button type="submit" class="btn">Conferma</button>
+      </div>
+    </div>
+
+  </form>
+</section>
+
+<style>
+.carousel-form { max-width: 400px; margin: auto; }
+.form-step { display: none; flex-direction: column; align-items: center; }
+.form-step.active { display: flex; }
+.options { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
+.option-btn { font-size: 1.2em; padding: 15px 25px; border-radius: 10px; cursor: pointer; border: 2px solid var(--accent); background: white; transition: 0.2s; }
+.option-btn:hover { background: var(--accent); color: white; }
+.question { font-weight: bold; font-size: 1.2em; text-align: center; margin-top: 20px; }
+input, textarea { width: 100%; padding: 12px; margin-top: 20px; border-radius: 8px; border: 1px solid #ccc; font-size: 1em; }
+.btn { margin-top: 20px; padding: 12px 25px; font-size: 1.1em; border-radius: 8px; cursor: pointer; background: var(--accent); color: white; border: none; }
+.nav-buttons { display: flex; gap: 10px; margin-top: 20px; }
+.progress-bar { width: 100%; height: 8px; background: #eee; border-radius: 4px; margin-bottom: 20px; }
+.progress-fill { height: 100%; width: 0%; background: var(--accent); border-radius: 4px; transition: width 0.3s; }
+</style>
+
+<script>
+const steps = document.querySelectorAll('.form-step');
+const progressFill = document.querySelector('.progress-fill');
+let currentStep = 0;
+
+function showStep(index){
+  steps.forEach((step,i)=>step.classList.toggle('active',i===index));
+  progressFill.style.width = ((index+1)/steps.length*100) + '%';
+}
+
+// Next buttons
+document.querySelectorAll('.next-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    currentStep++;
+    if(currentStep < steps.length) showStep(currentStep);
+  });
+});
+
+// Back buttons
+document.querySelectorAll('.back-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    currentStep--;
+    if(currentStep >= 0) showStep(currentStep);
+  });
+});
+
+// Option buttons
+document.querySelectorAll('.option-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const step = steps[currentStep];
+    const inputName = step.dataset.input;
+    if(inputName){
+      let input = document.querySelector(`input[name="${inputName}"]`);
+      if(!input){
+        input = document.createElement('input');
+        input.type='hidden';
+        input.name=inputName;
+        document.getElementById('rsvpForm').appendChild(input);
+      }
+      input.value = btn.dataset.value;
+    }
+    currentStep++;
+    if(currentStep < steps.length) showStep(currentStep);
+  });
+});
+
+showStep(currentStep);
+</script>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="rsvp" class="page">
+  <div class="section-title">Conferma Partecipazione</div>
+  <div class="announcement">SI PREGA DI DARE CONFERMARE LA PARTECIPAZIONE <br> ENTRO IL 30 MAGGIO 2026</div>
+
+  <div class="progress-bar">
+    <div class="progress-fill"></div>
+  </div>
+
+  <form id="rsvpForm" class="carousel-form" method="POST" action="/rsvp">
+
+    <!-- Step 1: Main attendee -->
+    <div class="form-step active">
+      <input name="name" placeholder="Nome *" required>
+      <input name="surname" placeholder="Cognome *" required>
+      <input name="email" type="email" placeholder="Email *" required>
+      <div class="nav-buttons">
+        <button type="button" class="next-btn btn">Avanti</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Attending -->
+    <div class="form-step" data-input="attending">
+      <div class="question">Parteciperai?</div>
+      <div class="options">
+        <button type="button" class="option-btn" data-value="yes">Sì</button>
+        <button type="button" class="option-btn" data-value="no">No</button>
+      </div>
+      <div class="nav-buttons">
+        <button type="button" class="back-btn btn">Indietro</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Number of people -->
+    <div class="form-step" data-input="guests">
+      <div class="question">Quante persone verranno con te? (0–4)</div>
+      <div class="options" id="guest-buttons"></div>
+      <div class="nav-buttons">
+        <button type="button" class="back-btn btn">Indietro</button>
+      </div>
+    </div>
+
+    <!-- Step 4: Number of children -->
+    <div class="form-step" data-input="bambini">
+      <div class="question">Quanti bambini tra i 3 e 10 anni?</div>
+      <div class="options" id="children-buttons"></div>
+      <div class="nav-buttons">
+        <button type="button" class="back-btn btn">Indietro</button>
+      </div>
+    </div>
+
+    <!-- Step 5: Names for adults and children -->
+    <div class="form-step" id="namesStep">
+      <div id="namesContainer"></div>
+      <div class="nav-buttons">
+        <button type="button" class="back-btn btn">Indietro</button>
+        <button type="button" class="next-btn btn">Avanti</button>
+      </div>
+    </div>
+
+    <!-- Step 6: Dietary notes -->
+    <div class="form-step">
+      <textarea name="notes" placeholder="Note o esigenze alimentari" style="min-height:40px"></textarea>
+      <div class="nav-buttons">
+        <button type="button" class="back-btn btn">Indietro</button>
+        <button type="submit" class="btn">Conferma</button>
+      </div>
+    </div>
+
+  </form>
+</section>
+
+<style>
+.carousel-form { max-width: 400px; margin: auto; }
+.form-step { display: none; flex-direction: column; align-items: center; }
+.form-step.active { display: flex; }
+.options { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 20px; }
+.option-btn { font-size: 1.2em; padding: 15px 25px; border-radius: 10px; cursor: pointer; border: 2px solid var(--accent); background: white; transition: 0.2s; }
+.option-btn:hover { background: var(--accent); color: white; }
+.question { font-weight: bold; font-size: 1.2em; text-align: center; margin-top: 20px; }
+input, textarea { width: 100%; padding: 12px; margin-top: 10px; border-radius: 8px; border: 1px solid #ccc; font-size: 1em; color: black; }
+input.missing::placeholder { color: var(--danger) }
+textarea.missing::placeholder { color: var(--danger); }
+.btn { margin-top: 20px; padding: 12px 25px; font-size: 1.1em; border-radius: 8px; cursor: pointer; background: var(--accent); color: white; border: none; }
+.nav-buttons { display: flex; gap: 10px; margin-top: 20px; }
+.progress-bar { width: 100%; height: 8px; background: #eee; border-radius: 4px; margin-bottom: 20px; }
+.progress-fill { height: 100%; width: 0%; background: var(--accent); border-radius: 4px; transition: width 0.3s; }
+
+
+</style>
+
+<script>
+const steps = document.querySelectorAll('.form-step');
+const progressFill = document.querySelector('.progress-fill');
+let currentStep = 0;
+let selectedGuests = 0;
+let selectedChildren = 0;
+
+function showStep(index){
+  steps.forEach((step,i)=>step.classList.toggle('active',i===index));
+  progressFill.style.width = ((index+1)/steps.length*100) + '%';
+}
+
+// Step 1: validate required inputs
+document.querySelectorAll('.next-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const step=steps[currentStep];
+    let valid=true;
+    step.querySelectorAll('input[required]').forEach(input=>{
+      if(!input.value.trim()){ input.classList.add('missing'); valid=false;}
+      else { input.classList.remove('missing'); }
+    });
+    if(!valid) return;
+    currentStep++;
+    showStep(currentStep);
+  });
+});
+
+// Back buttons
+// Back buttons with skip logic
+document.querySelectorAll('.back-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    // Move back until we find a step that should be shown
+    do {
+      currentStep--;
+      if(currentStep < 0) currentStep = 0;
+      const step = steps[currentStep];
+      // Skip children and names steps if selectedGuests = 0
+      if ((step.dataset.input === 'bambini' || step.id === 'namesStep') && selectedGuests === 0) {
+        continue; // skip this step
+      }
+      break;
+    } while(currentStep>0);
+    showStep(currentStep);
+  });
+});
+
+// Attending buttons
+document.querySelectorAll('.form-step[data-input="attending"] .option-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const value = btn.dataset.value;
+    let input = document.querySelector('input[name="attending"]');
+    if(!input){
+      input = document.createElement('input');
+      input.type='hidden';
+      input.name='attending';
+      document.getElementById('rsvpForm').appendChild(input);
+    }
+    input.value = value;
+    if(value==='no'){
+      document.getElementById('rsvpForm').submit(); // submit immediately
+    } else {
+      currentStep++;
+      generateGuestButtons();
+      showStep(currentStep);
+    }
+  });
+});
+
+// Guest buttons
+// Guest buttons
+function generateGuestButtons(){
+  const container = document.getElementById('guest-buttons');
+  container.innerHTML='';
+  for(let i=0;i<=4;i++){
+    const b=document.createElement('button');
+    b.type='button';
+    b.className='option-btn';
+    b.textContent=i;
+    b.dataset.value=i;
+    b.addEventListener('click',()=>{
+      selectedGuests=i;
+      let input=document.querySelector('input[name="guests"]');
+      if(!input){
+        input=document.createElement('input');
+        input.type='hidden';
+        input.name='guests';
+        document.getElementById('rsvpForm').appendChild(input);
+      }
+      input.value=i;
+
+      if(i===0){
+        // No companions → set children = 0 and skip names step
+        selectedChildren = 0;
+        let childInput = document.querySelector('input[name="bambini"]');
+        if(!childInput){
+          childInput=document.createElement('input');
+          childInput.type='hidden';
+          childInput.name='bambini';
+          document.getElementById('rsvpForm').appendChild(childInput);
+        }
+        childInput.value = 0;
+
+        // Skip directly to dietary notes (Step 6)
+        currentStep = 5;
+        showStep(currentStep);
+      } else {
+        // If guests > 0, go to number of children
+        generateChildrenButtons();
+        currentStep++;
+        showStep(currentStep);
+      }
+    });
+    container.appendChild(b);
+  }
+}
+
+// Children buttons
+function generateChildrenButtons(){
+  const container=document.getElementById('children-buttons');
+  container.innerHTML='';
+  for(let i=0;i<=selectedGuests;i++){
+    const b=document.createElement('button');
+    b.type='button';
+    b.className='option-btn';
+    b.textContent=i;
+    b.dataset.value=i;
+    b.addEventListener('click',()=>{
+      selectedChildren=i;
+      let input=document.querySelector('input[name="bambini"]');
+      if(!input){ input=document.createElement('input'); input.type='hidden'; input.name='bambini'; document.getElementById('rsvpForm').appendChild(input);}
+      input.value=i;
+      generateNamesStep();
+      currentStep++;
+      showStep(currentStep);
+    });
+    container.appendChild(b);
+  }
+}
+
+// Names step
+function generateNamesStep(){
+  const container=document.getElementById('namesContainer');
+  container.innerHTML='';
+  const totalAdults = selectedGuests - selectedChildren;
+  const totalChildren = selectedChildren;
+  if(totalAdults>0){ container.innerHTML+='<h4>Adulti</h4>'; for(let i=1;i<=totalAdults;i++){ container.innerHTML+=`<input name="adult_name_${i}" placeholder="Nome adulto ${i} *" required><input name="adult_surname_${i}" placeholder="Cognome adulto ${i} *" required>`;}}
+  if(totalChildren>0){ container.innerHTML+='<h4>Bambini</h4>'; for(let i=1;i<=totalChildren;i++){ container.innerHTML+=`<input name="child_name_${i}" placeholder="Nome bambino ${i} *" required><input name="child_surname_${i}" placeholder="Cognome bambino ${i} *" required>`;}}
+}
+
+showStep(currentStep);
+</script>
