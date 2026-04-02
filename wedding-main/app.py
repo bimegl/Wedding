@@ -48,13 +48,7 @@ app.config["MAIL_PASSWORD"] = "zmaa yvhd fvwg ezkn"
 app.config["MAIL_DEFAULT_SENDER"] = "trackshare.inbox@gmail.com"
 
 mail = Mail(app)
-FIXED_EMAIL = "francesca.altavilla2425@gmail.com"
-
-
-
-
-
-
+FIXED_EMAIL = "beatrice.beco@icloud.com"
 
 
 def send_async_email(msg):
