@@ -44,11 +44,11 @@ app.config["MAIL_SERVER"] = "smtp.gmail.com"
 app.config["MAIL_PORT"] = 587
 app.config["MAIL_USE_TLS"] = True
 app.config["MAIL_USERNAME"] = "trackshare.inbox@gmail.com"
-app.config["MAIL_PASSWORD"] = "zmaa yvhd fvwg ezkn"
+app.config["MAIL_PASSWORD"] = "test"
 app.config["MAIL_DEFAULT_SENDER"] = "trackshare.inbox@gmail.com"
 
 mail = Mail(app)
-FIXED_EMAIL = "beatrice.beco@icloud.com"
+FIXED_EMAIL = "lucio.zaccardelli@gmail.com"
 
 
 def send_async_email(msg):
