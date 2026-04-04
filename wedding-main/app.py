@@ -337,9 +337,7 @@ def export():
     )
 
 
-# Test data
-
- = {
+test_data = {
     "participant_name": "Mario Rossi",
     "participant_email": "mario@example.com",
     "guests": 2,
