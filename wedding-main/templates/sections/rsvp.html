@@ -177,53 +177,27 @@ showStep(currentStep);
 
 -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <section id="rsvp" class="page">
   <div class="section-title">Conferma Partecipazione</div>
-  <div class="announcement">SI PREGA DI DARE CONFERMARE LA PARTECIPAZIONE <br> ENTRO IL 30 MAGGIO 2026</div>
+  <div class="announcement">SI PREGA DI CONFERMARE LA PROPRIA PARTECIPAZIONE<br>ENTRO IL 31 LUGLIO 2026</div>
 
-  <div class="progress-bar">
+  <!--div class="progress-bar">
     <div class="progress-fill"></div>
   </div>
 
-  <form id="rsvpForm" class="carousel-form" method="POST" action="/rsvp">
+  <form id="rsvpForm" class="carousel-form" method="POST" action="/rsvp"-->
 
     <!-- Step 1: Main attendee -->
-    <div class="form-step active">
+    <!--div class="form-step active">
       <input name="name" placeholder="Nome *" required>
       <input name="surname" placeholder="Cognome *" required>
       <input name="email" type="email" placeholder="Email *" required>
       <div class="nav-buttons">
         <button type="button" class="next-btn btn">Avanti</button>
       </div>
-    </div>
+    </div-->
 
-    <!-- Step 2: Attending -->
+    <!-- Step 2: Attending >
     <div class="form-step" data-input="attending">
       <div class="question">Parteciperai?</div>
       <div class="options">
@@ -233,36 +207,36 @@ showStep(currentStep);
       <div class="nav-buttons">
         <button type="button" class="back-btn btn">Indietro</button>
       </div>
-    </div>
+    </div-->
 
-    <!-- Step 3: Number of people -->
+    <!-- Step 3: Number of people >
     <div class="form-step" data-input="guests">
       <div class="question">Quante persone verranno con te? (0–4)</div>
       <div class="options" id="guest-buttons"></div>
       <div class="nav-buttons">
         <button type="button" class="back-btn btn">Indietro</button>
       </div>
-    </div>
+    </div-->
 
-    <!-- Step 4: Number of children -->
+    <!-- Step 4: Number of children >
     <div class="form-step" data-input="bambini">
-      <div class="question">Quanti bambini tra i 3 e 10 anni?</div>
+      <div class="question">Quanti bambini sotto gli 8 anni?</div>
       <div class="options" id="children-buttons"></div>
       <div class="nav-buttons">
         <button type="button" class="back-btn btn">Indietro</button>
       </div>
-    </div>
+    </div-->
 
-    <!-- Step 5: Names for adults and children -->
+    <!-- Step 5: Names for adults and children >
     <div class="form-step" id="namesStep">
       <div id="namesContainer"></div>
       <div class="nav-buttons">
         <button type="button" class="back-btn btn">Indietro</button>
         <button type="button" class="next-btn btn">Avanti</button>
       </div>
-    </div>
+    </div-->
 
-    <!-- Step 6: Dietary notes -->
+    <!-- Step 6: Dietary notes >
     <div class="form-step">
       <textarea name="notes" placeholder="Note o esigenze alimentari" style="min-height:40px"></textarea>
       <div class="nav-buttons">
@@ -271,7 +245,7 @@ showStep(currentStep);
       </div>
     </div>
 
-  </form>
+  </form-->
 </section>
 
 <style>
@@ -293,7 +267,7 @@ textarea.missing::placeholder { color: var(--danger); }
 
 </style>
 
-<script>
+<!--script>
 const steps = document.querySelectorAll('.form-step');
 const progressFill = document.querySelector('.progress-fill');
 let currentStep = 0;
@@ -443,4 +417,4 @@ function generateNamesStep(){
 }
 
 showStep(currentStep);
-</script>
+</script-->
