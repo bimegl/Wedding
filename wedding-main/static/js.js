@@ -74,8 +74,13 @@ function copyIBAN(){
   const timer = setInterval(update,1000);
 
 })();
-// Refresh → torna in cima solo se nessun hash è attivo
-if (window.location.hash === '') window.scrollTo(0, 0);
+// Refresh → torna in cima
+window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
+if (window.location.hash === '') {
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+  setTimeout(() => window.scrollTo(0, 0), 150);
+}
 document.getElementById("year").textContent = new Date().getFullYear();
 
 document.addEventListener("DOMContentLoaded", () => {
