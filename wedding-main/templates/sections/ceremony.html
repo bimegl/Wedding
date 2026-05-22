@@ -36,7 +36,7 @@
   </div>
 
   <div class="map-wrap" style="margin-top:30px;">
-    <iframe id="mapFrame" class="location-img"
+    <iframe id="mapFrameDove" class="location-img"
       src="https://www.google.com/maps?q=Relais%20La%20Tenuta%20del%20Gallo%2C%20Via%20Ortacci%2034%2C%2005022%20Macchie%20TR%2C%20Italia&output=embed"
       allowfullscreen="" loading="lazy">
     </iframe>
@@ -45,14 +45,15 @@
 </section>
 
 <script>
-  const links = document.querySelectorAll('.map-link');
-  const mapFrame = document.getElementById('mapFrame');
+  const ceremonyLinks = document.querySelectorAll('#dove .map-link');
+  const ceremonyMapFrame = document.getElementById('mapFrameDove');
 
-  links.forEach(link => {
+  ceremonyLinks.forEach(link => {
     link.addEventListener('click', e => {
       e.preventDefault();
       const query = link.parentElement.getAttribute('data-map');
-      mapFrame.src = `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
+      ceremonyMapFrame.src = `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
+      ceremonyMapFrame.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });
   });
 </script>
