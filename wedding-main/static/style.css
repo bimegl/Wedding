@@ -182,7 +182,7 @@ main{ overflow-x:hidden; }
 
 .hero-name{
   font-family:var(--font-script);
-  font-size:clamp(42px,8.5vw,66px);
+  font-size:clamp(44px,9vw,68px);
   font-weight:lighter;
   color:var(--gold);
   margin:40px 0 var(--space-md);
