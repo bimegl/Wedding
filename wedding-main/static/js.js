@@ -74,7 +74,11 @@ function copyIBAN(){
   const timer = setInterval(update,1000);
 
 })();
-
+//server per rimandare su refresh il sito sulla home
+//-----------------
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+//-------------------
 document.getElementById("year").textContent = new Date().getFullYear();
 
 document.addEventListener("DOMContentLoaded", () => {
