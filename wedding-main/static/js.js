@@ -74,13 +74,14 @@ function copyIBAN(){
   const timer = setInterval(update,1000);
 
 })();
-// Refresh → torna in cima
+// Refresh → sempre in cima; hash saltato solo su reload
 window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
-if (window.location.hash === '') {
-  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-  window.scrollTo(0, 0);
-  setTimeout(() => window.scrollTo(0, 0), 150);
-}
+window.addEventListener('pageshow', (e) => {
+  if (e.persisted || performance.getEntriesByType?.('navigation')[0]?.type === 'reload') {
+    history.replaceState(null, '', window.location.pathname);
+    window.scrollTo(0, 0);
+  }
+});
 document.getElementById("year").textContent = new Date().getFullYear();
 
 document.addEventListener("DOMContentLoaded", () => {
