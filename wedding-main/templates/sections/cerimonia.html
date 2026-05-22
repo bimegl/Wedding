@@ -1,0 +1,40 @@
+<section id="cerimonia" class="page">
+  <h2 class="section-title">Cerimonia</h2>
+  <div class="announcement" style="margin-top:40px;">
+    LA CERIMONIA SI TERRÀ PRESSO LA
+  </div>
+  <h3 class="section-title" style="color:var(--gold);">
+    Chiesa di San Biagio 
+  </h3>
+  <div class="location" data-map="Chiesa di San Biagio, Melezzole (TR)">
+    Melezzole (TR) 
+    <a href="#" class="map-link" style="margin-left:8px; text-decoration:none; color: var(--accent);">
+      <i class="fa-solid fa-diamond-turn-right"></i>
+    </a>
+  </div>
+  <div class="location">
+    <img src="/static/images/chiesa.jpg" class="location-img" alt="Chiesa di San Biagio" loading="lazy">
+  </div>
+
+  <div class="map-wrap" style="margin-top:30px;">
+    <iframe id="mapFrameCerimonia" class="location-img"
+      src="https://www.google.com/maps/embed?origin=mfe&pb=!1m2!2m1!1sChiesa+di+San+Biagio+Melezzole"
+      allowfullscreen="" loading="lazy">
+    </iframe>
+  </div>
+
+</section>
+
+<script>
+  const cerimoniaLinks = document.querySelectorAll('#cerimonia .map-link');
+  const cerimoniaMapFrame = document.getElementById('mapFrameCerimonia');
+
+  cerimoniaLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const query = link.parentElement.getAttribute('data-map');
+      cerimoniaMapFrame.src = `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
+      cerimoniaMapFrame.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+</script>

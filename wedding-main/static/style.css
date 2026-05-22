@@ -168,7 +168,11 @@ img, .container, main, .site-footer { max-width:100%; }
 .main-nav-content a{
   display:flex; align-items:center;
   font-family:var(--font-body);
-  font-size:20px; gap:28px;
+  font-size:20px; gap:16px;
+}
+.main-nav-content a i{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:1.6em; flex:none;
 }
 
 /* ===========================================
@@ -190,6 +194,7 @@ img, .container, main, .site-footer { max-width:100%; }
 .announcement{ font-size:14px; letter-spacing:2px; margin:var(--space-xl) 0; }
 .section-title{ margin:var(--space-lg) 0 var(--space-sm); font-size:50px; letter-spacing:3px; font-weight:600;  font-family:var(--font-script); font-weight:lighter; color:var(--accent);}
 .location{ margin-top:8px; font-size:14px; }
+
 
 /* ===========================================
    DATE SECTION

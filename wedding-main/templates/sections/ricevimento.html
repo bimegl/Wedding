@@ -1,0 +1,41 @@
+<section id="ricevimento" class="page">
+  <h2 class="section-title">Ricevimento</h2>
+  <div class="announcement" style="margin-top:40px;">
+    A SEGUIRE, FESTEGGIEREMO INSIEME A<br> 
+    AMICI E PARENTI PRESSO IL
+  </div>
+  <h3 class="section-title" style="color:var(--gold);">
+    Relais<br>La Tenuta del Gallo
+  </h3>
+  <div class="location" data-map="Relais La Tenuta del Gallo, Via Ortacci 34, 05022 Macchie TR, Italia">
+    Via Ortacci 34 – Amelia (TR)
+    <a href="#" class="map-link" style="margin-left:8px; text-decoration:none; color: var(--accent);">
+      <i class="fa-solid fa-diamond-turn-right"></i>
+    </a>
+  </div>
+  <div class="location">
+    <img src="/static/images/relais.jpg" class="location-img" alt="Relais La Tenuta del Gallo" loading="lazy">
+  </div>
+
+  <div class="map-wrap" style="margin-top:30px;">
+    <iframe id="mapFrameRicevimento" class="location-img"
+      src="https://www.google.com/maps?q=Relais%20La%20Tenuta%20del%20Gallo%2C%20Via%20Ortacci%2034%2C%2005022%20Macchie%20TR%2C%20Italia&output=embed"
+      allowfullscreen="" loading="lazy">
+    </iframe>
+  </div>
+
+</section>
+
+<script>
+  const ricevimentoLinks = document.querySelectorAll('#ricevimento .map-link');
+  const ricevimentoMapFrame = document.getElementById('mapFrameRicevimento');
+
+  ricevimentoLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const query = link.parentElement.getAttribute('data-map');
+      ricevimentoMapFrame.src = `https://www.google.com/maps?q=${encodeURIComponent(query)}&output=embed`;
+      ricevimentoMapFrame.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+</script>

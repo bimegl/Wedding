@@ -19,6 +19,8 @@ function copyIBAN(){
       msgEl.textContent = "";
     },2000);
 
+  }).catch(() => {
+    msgEl.textContent = "Errore, riprova";
   });
 
 }
@@ -73,6 +75,7 @@ function copyIBAN(){
 
 })();
 
+document.getElementById("year").textContent = new Date().getFullYear();
 
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll(".page");
@@ -81,20 +84,15 @@ document.addEventListener("DOMContentLoaded", () => {
     entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible"); // fade in
-        } else {
-          entry.target.classList.remove("visible"); // fade out
+          entry.target.classList.add("visible");
         }
       });
     },
-    {
-      threshold: 0.2 // triggers when 20% of section is visible
-    }
+    { threshold: 0.2 }
   );
 
   sections.forEach(section => observer.observe(section));
 });
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".timeline-item");
@@ -104,8 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
-        } else {
-          entry.target.classList.remove("visible");
         }
       });
     },
@@ -128,13 +124,19 @@ if(menuToggle && menuOverlay){
 
   function openMenu(){
     menuOverlay.classList.add("open");
+    menuToggle.setAttribute("aria-expanded", "true");
   }
 
   function closeMenu(){
     menuOverlay.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
   }
 
   menuToggle.addEventListener("click", openMenu);
+
+  menuOverlay.addEventListener("keydown", (e) => {
+    if(e.key === "Escape") closeMenu();
+  });
 
   if(menuClose){
     menuClose.addEventListener("click", closeMenu);
