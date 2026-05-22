@@ -177,7 +177,7 @@ main{ overflow-x:hidden; }
 /* ===========================================
    LOGO & HERO
 =========================================== */
-.logo{ display:flex; justify-content:center; margin-bottom:var(--space-sm); }
+.logo{ display:flex; justify-content:center; margin-bottom:var(--space-md); }
 .logo-img{ width:220px; max-width:80%; }
 
 .hero-name{
@@ -185,13 +185,11 @@ main{ overflow-x:hidden; }
   font-size:clamp(42px,8.5vw,66px);
   font-weight:lighter;
   color:var(--gold);
-  margin:0 0 var(--space-md);
+  margin:var(--space-md) 0;
 }
 
 .hero-section{margin-top:0; padding-top:10px}
-.hero-section .announcement{ margin:var(--space-md) 0; }
-.hero-section .date-section{ margin:var(--space-md) 0; }
-.hero-section .countdown-wrap{ margin-top:var(--space-md); }
+.hero-section .announcement{ margin:0 0 var(--space-md); }
 
 .announcement{ font-size:14px; letter-spacing:2px; margin:var(--space-xl) 0; }
 .section-title{ margin:var(--space-lg) 0 var(--space-sm); font-size:50px; letter-spacing:3px; font-weight:600;  font-family:var(--font-script); font-weight:lighter; color:var(--accent);}

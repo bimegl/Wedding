@@ -76,10 +76,8 @@ function copyIBAN(){
 })();
 //server per rimandare su refresh il sito sulla home
 //-----------------
-window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 window.scrollTo(0, 0);
-setTimeout(() => window.scrollTo(0, 0), 50);
 //-------------------
 document.getElementById("year").textContent = new Date().getFullYear();
 
