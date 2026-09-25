@@ -61,6 +61,7 @@ function copyIBAN(){
     const hours = Math.floor(diff / (1000*60*60) % 24);
     const mins = Math.floor(diff / (1000*60) % 60);
     const secs = Math.floor(diff / 1000 % 60);
+    let timer;
 
     if(daysEl) daysEl.textContent = days;
     if(hoursEl) hoursEl.textContent = pad(hours);
@@ -71,7 +72,7 @@ function copyIBAN(){
 
   update();
 
-  const timer = setInterval(update,1000);
+ timer = setInterval(update,1000);
 
 })();
 
