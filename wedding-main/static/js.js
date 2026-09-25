@@ -70,7 +70,6 @@ function copyIBAN(){
 
   }
 
-  update();
 
  timer = setInterval(update,1000);
 
